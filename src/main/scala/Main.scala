@@ -23,8 +23,8 @@ object Main extends App
   }
 
   // bubblesort actually cracks on a list of 10000 elements -> used one with 2k elements, 5 times lesser
-  //println(bubbleSort((1 to 20).toList.reverse, 0))
-  time(bubbleSort((1 to 1000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
+  // => solved with tailrec, now goes up to ~6k elements on my laptop with jvm memory allocation 128min-1024max.
+  time(bubbleSort((1 to 7000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
   Thread.sleep(2000)
 
   /*time(mergesort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Mergesort")
