@@ -1,9 +1,19 @@
+import NLogN.NLogN
+import NplusR.NplusR
+import NtimesN.NtimesN
+
 import scala.util.Random
 
 /**
   * Created by Robert-PC on 8/30/2017.
   */
-object Main extends App with QuickSort with BubbleSort{
+
+
+/* If someone wants to check that indeed the lists are sorted, you can print time -> it returns the result from the function */
+object Main extends App
+  with NLogN
+  with NtimesN
+  with NplusR{
   def time[R](block: => R, sortingMethod: String): R = {
     val t0 = System.currentTimeMillis()
     val result = block    // call-by-name
@@ -12,6 +22,7 @@ object Main extends App with QuickSort with BubbleSort{
     result
   }
 
-  //println(time (quicksort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort"))
-  println(bubbleSort(List(5,4,3,3,2,1), 0))
+  time (quicksort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
+  // bubblesort actually cracks on a list of 10000 elements -> used one with 2k elements, 5 times lesser
+  time(bubbleSort((1 to 2000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
 }
