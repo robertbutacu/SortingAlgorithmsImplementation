@@ -24,7 +24,11 @@ object Main extends App
 
   // bubblesort actually cracks on a list of 10000 elements -> used one with 2k elements, 5 times lesser
   time(bubbleSort((1 to 2000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
-  time(mergesort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Mergesort")
-  time(quicksort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
+  Thread.sleep(2000)
 
+  time(mergesort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Mergesort")
+  Thread.sleep(2000)
+
+  time(quicksort((1 to 1000000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
+  Thread.sleep(2000)
 }
