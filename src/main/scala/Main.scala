@@ -13,16 +13,18 @@ import scala.util.Random
 object Main extends App
   with NLogN
   with NtimesN
-  with NplusR{
+  with NplusR {
   def time[R](block: => R, sortingMethod: String): R = {
     val t0 = System.currentTimeMillis()
-    val result = block    // call-by-name
+    val result = block // call-by-name
     val t1 = System.currentTimeMillis()
     println(s"Elapsed time on $sortingMethod: " + (t1 - t0) + "ms")
     result
   }
 
-  time (quicksort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
   // bubblesort actually cracks on a list of 10000 elements -> used one with 2k elements, 5 times lesser
-  time(bubbleSort((1 to 2000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
+  //time(bubbleSort((1 to 2000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
+  time(mergesort((1 to 3000).toList.map(_ => Random.nextInt().abs)), "Mergesort")
+  //time(quicksort((1 to 2000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
+
 }
