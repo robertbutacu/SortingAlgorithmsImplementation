@@ -8,13 +8,13 @@ trait MergeSort {
 
   def mergesort(xs: List[Int]): List[Int] = {
     def merge(xs: List[Int], ys: List[Int]): List[Int] = (xs, ys) match {
-      case (xs, Nil)          => xs
-      case (Nil, ys)          => ys
-      case (x :: xs, y :: ys) =>
+      case (_, Nil)          => xs
+      case (Nil, _)          => ys
+      case (x :: xsTail, y :: ysTail) =>
         if (x < y)
-          x :: merge(xs, ys)
+          x :: merge(xsTail, ys)
         else
-          y :: merge(xs, ys)
+          y :: merge(xs, ysTail)
     }
     if (xs.length < 2)
       xs
