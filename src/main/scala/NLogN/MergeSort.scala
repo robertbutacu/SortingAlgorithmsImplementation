@@ -9,8 +9,8 @@ trait MergeSort {
   def mergesort(xs: List[Int]): List[Int] = {
     @tailrec
     def merge(xs: List[Int], ys: List[Int], sortedArray: List[Int]): List[Int] = (xs, ys) match {
-      case (_, Nil)          => sortedArray ::: xs
-      case (Nil, _)          => sortedArray ::: ys
+      case (_, Nil)                   => sortedArray ::: xs
+      case (Nil, _)                   => sortedArray ::: ys
       case (x :: xsTail, y :: ysTail) =>
         if (x < y)
           merge(xsTail, ys, sortedArray :+ x)
