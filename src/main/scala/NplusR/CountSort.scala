@@ -5,21 +5,25 @@ package NplusR
   */
 trait CountSort {
   def countsort(input: List[Int]): List[Int] = {
-    val countingArray = (input.min to input.max).toArray
+    def key(current: Int, min: Int) = {
+      current - min
+    }
+    val countingArray = new Array[Int](input.length)
     val sortedArray = new Array[Int](input.length)
-
-    input.foreach{el => countingArray(el-1) += 1}
+    val min = input.min
+    input.foreach{el => countingArray(key(el, min)) += 1;}
 
     countingArray.foreach{
       el =>
-        if (el > 0)
-          countingArray(el) += countingArray(el - 1)
+        if (key(el, min) > 0)
+          countingArray(key(el, min)) += countingArray(key(el, min) - 1)
     }
 
     input.foreach{
       el =>
-        val currentIndex = countingArray(el)
-        countingArray(el) -=  1
+        println(el)
+        val currentIndex = countingArray(key(el, min))
+        countingArray(key(el, min)) -=  1
         sortedArray(currentIndex) = el
     }
 
