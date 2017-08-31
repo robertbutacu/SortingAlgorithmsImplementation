@@ -21,14 +21,14 @@ import scala.annotation.tailrec
 trait MergeSort {
   def mergeSort(input: List[Int]): List[Int] = {
     @tailrec
-    def merge(first: List[Int], second: List[Int], sortedArray: List[Int]): List[Int] = (first, second) match {
-      case (_, Nil)                   => sortedArray ::: first
-      case (Nil, _)                   => sortedArray ::: second
+    def merge(xs: List[Int], ys: List[Int], sortedArray: List[Int]): List[Int] = (xs, ys) match {
+      case (_, Nil)                   => sortedArray ::: xs
+      case (Nil, _)                   => sortedArray ::: ys
       case (x :: xsTail, y :: ysTail) =>
         if (x < y)
-          merge(xsTail, second, sortedArray :+ x)
+          merge(xsTail, ys, sortedArray :+ x)
         else
-          merge(first, ysTail, sortedArray :+ y)
+          merge(xs, ysTail, sortedArray :+ y)
     }
     if (input.length < 2)
       input
