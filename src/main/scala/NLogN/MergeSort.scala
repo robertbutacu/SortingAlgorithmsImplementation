@@ -19,7 +19,7 @@ import scala.annotation.tailrec
   */
 
 trait MergeSort {
-  def mergesort(xs: List[Int]): List[Int] = {
+  def mergeSort(xs: List[Int]): List[Int] = {
     @tailrec
     def merge(xs: List[Int], ys: List[Int], sortedArray: List[Int]): List[Int] = (xs, ys) match {
       case (_, Nil)                   => sortedArray ::: xs
@@ -34,7 +34,7 @@ trait MergeSort {
       xs
     else {
       val mid = xs.length / 2
-      merge(mergesort(xs.slice(0, mid)), mergesort(xs.slice(mid, xs.length)), List())
+      merge(mergeSort(xs.slice(0, mid)), mergeSort(xs.slice(mid, xs.length)), List())
     }
   }
 }

@@ -37,6 +37,6 @@ object Main extends App
   //time(countsort((1 to 10000).toList.map(_ => Random.nextInt() % 100000 + 10000.abs)), "Countsort")
   //Thread.sleep(2000)
 
-  time(combsort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
+  time(combSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
   Thread.sleep(2000)
 }

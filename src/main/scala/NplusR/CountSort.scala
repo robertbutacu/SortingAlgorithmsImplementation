@@ -22,7 +22,7 @@ package NplusR
   *   Explanatory video: https://www.youtube.com/watch?v=7zuGmKfUt7s   .
   */
 trait CountSort {
-  def countsort(input: List[Int]): List[Int] = {
+  def countSort(input: List[Int]): List[Int] = {
     def key(current: Int, min: Int): Int = {
       current - min
     }
