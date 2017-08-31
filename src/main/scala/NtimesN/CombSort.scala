@@ -16,7 +16,6 @@ trait CombSort {
       currentPosition < (input.length - gap) match {
         case true =>
           if (input(currentPosition) > input(currentPosition + gap)){
-            println("Swapping " + input(currentPosition) + " with " + input(currentPosition + gap))
             val aux = input(currentPosition + gap)
             input(currentPosition + gap) = input(currentPosition)
             input(currentPosition) = aux
@@ -32,9 +31,10 @@ trait CombSort {
     }
 
     @tailrec
-    def combsort(input: List[Int], currentGap: Int, swapped: Boolean): List[Int] = {
-      if (currentGap != 1 || swapped) {
-        iterate(input.toArray, 0, currentGap, false) match {
+    def combsort(input: List[Int], previousGap: Int, swapped: Boolean): List[Int] = {
+      if (previousGap != 1 || swapped) {
+        val currentGap = getNextGap(previousGap)
+        iterate(input.toArray, 0, currentGap, swapped = false) match {
           case (partiallySorted, hasSwapped) => combsort(partiallySorted.toList, getNextGap(currentGap), hasSwapped)
         }
       }
