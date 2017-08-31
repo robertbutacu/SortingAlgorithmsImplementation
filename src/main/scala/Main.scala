@@ -33,7 +33,7 @@ object Main extends App
   //time(quicksort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
   //Thread.sleep(2000)
 
-  time(countsort((1 to 10000).toList.map(_ => Random.nextInt().abs % 1000000 + 500)), "Countsort")
-  //println(countsort((1 to 10000).toList.map(_ => Random.nextInt().abs % 10000 + 500)))
-
+  //countsort doesn't work on very large numbers
+  time(countsort((1 to 10000).toList.map(_ => Random.nextInt() % 100000 + 10000.abs)), "Countsort")
+  Thread.sleep(2000)
 }
