@@ -34,6 +34,8 @@ object Main extends App
   //Thread.sleep(2000)
 
   //countsort doesn't work on very large numbers
-  time(countsort((1 to 10000).toList.map(_ => Random.nextInt() % 100000 + 10000.abs)), "Countsort")
-  Thread.sleep(2000)
+  //time(countsort((1 to 10000).toList.map(_ => Random.nextInt() % 100000 + 10000.abs)), "Countsort")
+  //Thread.sleep(2000)
+
+  println(combsort(List(5,4,3,2,1)))
 }
