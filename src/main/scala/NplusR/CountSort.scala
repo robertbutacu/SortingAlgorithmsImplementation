@@ -8,7 +8,7 @@ trait CountSort {
     def key(current: Int, min: Int): Int = {
       current - min
     }
-    val countingArray = new Array[Int](input.length)
+    val countingArray = new Array[Int](input.max - input.min + 1)
     val sortedArray = new Array[Int](input.length)
     val min = input.min
 
