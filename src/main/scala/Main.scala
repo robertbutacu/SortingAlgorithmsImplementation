@@ -27,16 +27,16 @@ object Main extends App
   //time(bubbleSort((1 to 6000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
   //Thread.sleep(2000)
 
-  //time(mergesort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Mergesort")
+  time(mergeSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Mergesort")
   //Thread.sleep(2000)
 
-  //time(quicksort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
+  //time(quickSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
   //Thread.sleep(2000)
 
   //countsort doesn't work on very large numbers
-  //time(countsort((1 to 10000).toList.map(_ => Random.nextInt() % 100000 + 10000.abs)), "Countsort")
+   //time(countSort((1 to 10000).toList.map(_ => Random.nextInt() % 100000 + 10000.abs)), "Countsort")
   //Thread.sleep(2000)
 
-  time(combSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
+  //time(combSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
   Thread.sleep(2000)
 }

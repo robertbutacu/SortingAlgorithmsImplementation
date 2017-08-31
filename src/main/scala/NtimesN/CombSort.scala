@@ -12,16 +12,16 @@ trait CombSort {
     }
 
     @tailrec
-    def iterate(input: Array[Int], currentPosition: Int, gap: Int, swapped: Boolean): (Array[Int], Boolean) = {
-      if (currentPosition < (input.length - gap)) {
-        if (input(currentPosition) > input(currentPosition + gap)) {
-          val aux = input(currentPosition + gap)
-          input(currentPosition + gap) = input(currentPosition)
-          input(currentPosition) = aux
-          iterate(input, currentPosition + 1, gap, swapped = true)
+    def iterate(input: Array[Int], index: Int, gap: Int, swapped: Boolean): (Array[Int], Boolean) = {
+      if (index < (input.length - gap)) {
+        if (input(index) > input(index + gap)) {
+          val aux = input(index + gap)
+          input(index + gap) = input(index)
+          input(index) = aux
+          iterate(input, index + 1, gap, swapped = true)
         } else
           iterate(input,
-            currentPosition + 1,
+            index + 1,
             gap,
             swapped)
       } else {

@@ -15,11 +15,11 @@ package NLogN
   *   Slightly complicated video about this: https://www.youtube.com/watch?v=aQiWF4E8flQ    .
   */
 trait QuickSort {
-  def quickSort(list: List[Int]): List[Int] = {
-    list match {
+  def quickSort(input: List[Int]): List[Int] = {
+    input match {
       case Nil     => Nil
-      case a::Nil  => List(a)
-      case a::tail => quickSort(tail.filter(x => x <= a)) ::: List(a) ::: quickSort(tail.filter(x => x > a))
+      case x::Nil  => List(x)
+      case x::tail => quickSort(tail.filter(el => el <= x)) ::: List(x) ::: quickSort(tail.filter(el => el > x))
     }
   }
 }
