@@ -8,18 +8,15 @@ import scala.annotation.tailrec
 trait InsertSort {
   @tailrec
   final def insertSort(input: List[Int], currentPos: Int): List[Int] = {
-    def insertElement(input: List[Int], element: Int, currentPos: Int): List[Int] = {
-      if (currentPos > 0)
-        if (input(currentPos) > element)
-          input.slice(0, currentPos) ::: List(element) ::: input.slice(currentPos, input.length)
-        else
-          insertElement(input, element, currentPos - 1)
-      else
-        List(element) ::: input
+    def insertElement(input: List[Int], currentPos: Int): List[Int] = {
+      input.slice(0, currentPos).filter(_ < input(currentPos)) :::
+        List(input(currentPos)) :::
+        input.slice(0, currentPos).filter(_ > input(currentPos)) :::
+        input.slice(currentPos + 1, input.length)
     }
 
-    if (currentPos < input.length)
-      {println(input); insertSort(insertElement(input.filter(_ != input(currentPos)), input(currentPos), currentPos - 1), currentPos + 1)}
+    if(currentPos < input.length)
+      insertSort(insertElement(input, currentPos), currentPos + 1)
     else
       input
   }

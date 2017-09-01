@@ -40,7 +40,7 @@ object Main extends App
   //time(combSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
   //Thread.sleep(2000)\
 
-  //time(insertSort((1 to 1000).toList.map(_ => Random.nextInt().abs), 0), "InsertSort")
-  println(insertSort(List(5,4,3,2,1), 0))
+  time(insertSort((1 to 1000).toList.map(_ => Random.nextInt().abs), 0), "InsertSort")
+  //println(insertSort(List(5,4,3,2,1), 0))
   Thread.sleep(2000)
 }
