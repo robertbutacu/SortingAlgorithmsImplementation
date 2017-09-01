@@ -30,7 +30,7 @@ object Main extends App
   //time(mergeSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Mergesort")
   //Thread.sleep(2000)
 
-  time(quickSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
+  //time(quickSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Quicksort")
   //Thread.sleep(2000)
 
   //countsort doesn't work on very large numbers
@@ -38,5 +38,5 @@ object Main extends App
   //Thread.sleep(2000)
 
   //time(combSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
-  Thread.sleep(2000)
+  println(insertSort(List(5,4,3,2,1)))
 }
