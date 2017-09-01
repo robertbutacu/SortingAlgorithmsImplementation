@@ -38,5 +38,5 @@ object Main extends App
   //Thread.sleep(2000)
 
   //time(combSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
-  println(insertSort(List(5,4,3,2,1)))
+  println(insertSort(List(5,4,3,2,1),0))
 }
