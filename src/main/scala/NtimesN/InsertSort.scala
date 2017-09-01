@@ -9,7 +9,7 @@ trait InsertSort {
       input.slice(0, currentPos).filter(_ < input(currentPos)) :::
         List(input(currentPos)) :::
         input.slice(0, currentPos).filter(_ > input(currentPos)) :::
-        input.slice(currentPos, input.length)
+        input.slice(currentPos + 1, input.length)
     }
 
     if(currentPos < input.length)
