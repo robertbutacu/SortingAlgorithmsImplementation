@@ -24,7 +24,7 @@ object Main extends App
 
   // bubblesort actually cracks on a list of 10000 elements -> used one with 2k elements, 5 times lesser
   // => solved with tailrec, now goes up to ~6k elements on my laptop with jvm memory allocation 128min-1024max.
-  //time(bubbleSort((1 to 6000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
+  //time(bubbleSort((1 to 1000).toList.map(_ => Random.nextInt().abs), 0), "Bubblesort")
   //Thread.sleep(2000)
 
   //time(mergeSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Mergesort")
@@ -38,5 +38,9 @@ object Main extends App
   //Thread.sleep(2000)
 
   //time(combSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
-  println(insertSort(List(5,4,3,2,1),0))
+  //Thread.sleep(2000)\
+
+  //time(insertSort((1 to 1000).toList.map(_ => Random.nextInt().abs), 0), "InsertSort")
+  println(insertSort(List(5,4,3,2,1), 0))
+  Thread.sleep(2000)
 }
