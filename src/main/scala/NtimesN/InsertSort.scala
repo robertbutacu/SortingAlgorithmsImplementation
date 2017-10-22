@@ -5,7 +5,7 @@ import scala.annotation.tailrec
 /**
   * Created by Robert-PC on 8/29/2017.
   */
-trait InsertSort {
+object InsertSort {
   @tailrec
   final def insertSort(input: List[Int], currentPos: Int): List[Int] = {
     def insertElement(input: List[Int], currentPos: Int): List[Int] = {

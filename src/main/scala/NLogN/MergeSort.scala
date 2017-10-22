@@ -18,7 +18,7 @@ import scala.annotation.tailrec
   *   Very good video : https://www.youtube.com/watch?v=EeQ8pwjQxTM  .
   */
 
-trait MergeSort {
+object MergeSort {
   def mergeSort(input: List[Int]): List[Int] = {
     @tailrec
     def merge(xs: List[Int], ys: List[Int], sortedArray: List[Int]): List[Int] = (xs, ys) match {

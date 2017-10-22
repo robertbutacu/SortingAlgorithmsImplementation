@@ -5,7 +5,7 @@ import scala.annotation.tailrec
 /**
   * Created by Robert-PC on 8/29/2017.
   */
-trait CombSort {
+object CombSort {
   def combSort(input: List[Int]): List[Int] = {
     def getNextGap(currentGap: Int): Int = {
       1.max((currentGap * 10) / 13)

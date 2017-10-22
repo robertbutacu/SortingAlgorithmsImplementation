@@ -1,6 +1,4 @@
-import NLogN.NLogN
-import NplusR.NplusR
-import NtimesN.NtimesN
+import NtimesN.InsertSort
 
 import scala.util.Random
 
@@ -10,10 +8,7 @@ import scala.util.Random
 
 
 /* If someone wants to check that indeed the lists are sorted, you can print time -> it returns the result from the function */
-object Main extends App
-  with NLogN
-  with NtimesN
-  with NplusR {
+object Main extends App {
   def time[R](block: => R, sortingMethod: String): R = {
     val t0 = System.currentTimeMillis()
     val result = block // call-by-name
@@ -34,13 +29,13 @@ object Main extends App
   //Thread.sleep(2000)
 
   //countsort doesn't work on very large numbers
-   //time(countSort((1 to 10000).toList.map(_ => Random.nextInt() % 100000 + 10000.abs)), "Countsort")
+  //time(countSort((1 to 10000).toList.map(_ => Random.nextInt() % 100000 + 10000.abs)), "Countsort")
   //Thread.sleep(2000)
 
   //time(combSort((1 to 10000).toList.map(_ => Random.nextInt().abs)), "Combsort")
   //Thread.sleep(2000)\
 
-  time(insertSort((1 to 1000).toList.map(_ => Random.nextInt().abs), 0), "InsertSort")
+  time(InsertSort.insertSort((1 to 1000).toList.map(_ => Random.nextInt().abs), 0), "InsertSort")
   //println(insertSort(List(5,4,3,2,1), 0))
   Thread.sleep(2000)
 }

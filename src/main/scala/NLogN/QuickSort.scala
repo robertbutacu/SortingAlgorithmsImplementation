@@ -14,7 +14,7 @@ package NLogN
   *
   *   Slightly complicated video about this: https://www.youtube.com/watch?v=aQiWF4E8flQ    .
   */
-trait QuickSort {
+object QuickSort {
   def quickSort(input: List[Int]): List[Int] = {
     input match {
       case Nil     => Nil

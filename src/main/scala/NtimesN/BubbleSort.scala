@@ -5,7 +5,7 @@ import scala.annotation.tailrec
 /**
   * Created by Robert-PC on 8/29/2017.
   */
-trait BubbleSort {
+object BubbleSort {
   // for some reason, not sorting it reversed and then reversing it in the right way at the end,
   // causes the sorting to take about 10-20 times longer
   def bubbleSort(xs: List[Int], index: Int): List[Int] = {
